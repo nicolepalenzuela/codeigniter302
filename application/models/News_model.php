@@ -10,11 +10,11 @@ class News_model extends CI_Model {
         {
                 if ($slug === FALSE)
                 {
-                        $query = $this->db->get('palenzuela_nicole_news');
+                        $query = $this->db->get('palenzuela_nicole');
                         return $query->result_array();
                 }
         
-                $query = $this->db->get_where('palenzuela_nicole_news', array('slug' => $slug));
+                $query = $this->db->get_where('palenzuela_nicole', array('slug' => $slug));
                 return $query->row_array();
         }
 }
