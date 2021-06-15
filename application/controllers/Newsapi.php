@@ -24,9 +24,16 @@ class Newsapi extends RestController {
 	}
 
     public function index_post()
-        {
+    {
             $input = $this->input->post();
             $this->db->insert('news',$input);
             $this->response(['News created successfully.'],200);
-        } 
     } 
+	
+    public function index_put($id)
+    {
+            $input = $this->put();
+            $this->db->update('news', $input, array('id'=>$id));
+            $this->response(['News updated successfully.'],200);
+    }
+} 
